@@ -26,11 +26,6 @@
         echo "invalid input, please select your favorite color". "<br />";
     }
             
-<<<<<<< HEAD
-        
-    ?>
-=======
  ?>
->>>>>>> f76684d48663f127e6193e74d0ed4755181dfd5a
 </body>
 </html>
