@@ -1,0 +1,8 @@
+After watching the **Sessions Tutorials** answer the following:
+
+:question:What function do we use to start a session?
+ When you work with an application, you open it, do some changes, and then you close it. This is much like a Session. 
+The computer knows who you are. It knows when you start the application and when you end.
+But on the internet there is one problem: the web server does not know who you are or what you do, because the HTTP address doesn't maintain state.
+:question:Where are these session variables stored? 
+ all session variable values are stored in the global $_SESSION variable
