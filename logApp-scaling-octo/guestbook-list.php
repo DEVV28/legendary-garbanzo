@@ -1,4 +1,22 @@
 <?php
+    require('config/config.php');
+    require('config/db.php');
+
+    // Create Query
+    $query = 'SELECT * FROM person ORDER BY pid DESC';
+
+    // Get Result
+    $result = mysqli_query($conn, $query);
+
+    // Fetch Data
+    $persons = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    //var_dump($posts);
+
+    // Free Result
+    mysqli_free_result($result);
+
+    // Close Connection
+    mysqli_close($conn);
 
 ?>
 

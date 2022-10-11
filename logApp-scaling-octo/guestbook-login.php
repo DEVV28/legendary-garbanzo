@@ -1,9 +1,38 @@
 <?php
-  
+  require('config/config.php');
+  require('config/db.php');
 
+  if(isset($_POST['submit'])){
 
+    $uname = mysqli_real_escape_string($conn,$_POST['username']);
+    $password = mysqli_real_escape_string($conn,$_POST['password']);
 
+    if ($uname != "" && $password != ""){
+
+        $sql_query = "select count(*) as cntUser from account where username='".$uname."' 
+        and password='".$password."'";
+        $result = mysqli_query($conn,$sql_query);
+        $row = mysqli_fetch_array($result);
+
+        $count = $row['cntUser'];
+
+        if($count > 0){
+            $_SESSION['uname'] = $uname;
+            header('Location: guestbook-list.php');
+        }
+        else{
+
+          $_SESSION['message'] = "Invalid <b>username</b> or <b>password</b>!";
+        }
+    }
+
+    else
+    {
+       $_SESSION['message'] = "Please input <b>username</b> or <b>password</b>!";
+    }
+  }
 ?>
+
 <?php include('inc/header.php'); ?>
   <br/>
   <div style="width:30%; margin: auto; text-align: center;">
