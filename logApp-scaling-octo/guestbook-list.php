@@ -3,7 +3,7 @@
     require('config/db.php');
 
     // Create Query
-    $query = 'SELECT * FROM person ORDER BY pid DESC';
+    $query = 'SELECT * FROM persons ORDER BY pid DESC';
 
     // Get Result
     $result = mysqli_query($conn, $query);
